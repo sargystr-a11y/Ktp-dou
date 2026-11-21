@@ -18,16 +18,16 @@ def extract(name, data):
         d = Document(io.BytesIO(data))
         parts = [p.text for p in d.paragraphs if p.text.strip()]
         for t in d.tables:
-            parts.extend(" | ".join(c.text.replace("\\n", " ").strip() for c in row.cells) for row in t.rows)
-        return "\\n".join(parts)
+            parts.extend(" | ".join(c.text.replace("\n", " ").strip() for c in row.cells) for row in t.rows)
+        return "\n".join(parts)
     if ext == "txt": return data.decode("utf-8-sig", errors="replace")
     if ext == "pdf":
         from pypdf import PdfReader
-        return "\\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(data)).pages)
+        return "\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(data)).pages)
     if ext == "xlsx":
         from openpyxl import load_workbook
         wb = load_workbook(io.BytesIO(data), data_only=True, read_only=True)
-        return "\\n".join(" | ".join(str(v) for v in row if v is not None) for ws in wb for row in ws.iter_rows(values_only=True) if any(v is not None for v in row))
+        return "\n".join(" | ".join(str(v) for v in row if v is not None) for ws in wb for row in ws.iter_rows(values_only=True) if any(v is not None for v in row))
     raise ValueError("Формат не поддерживается. Используйте DOCX, PDF, TXT или XLSX.")
 
 def generate_text(prompt):
@@ -72,16 +72,16 @@ async def make_plan(age: str=Form(...), theme: str=Form(...), start_date: str=Fo
         try: content=extract(f.filename or "",data)
         except Exception as e: raise HTTPException(400, str(e)[:200])
         if not content.strip(): raise HTTPException(400, f"В документе «{f.filename}» не найден текст. Скан PDF не поддерживается.")
-        docs.append(label + ":\\n" + content[:18000])
+        docs.append(label + ":\n" + content[:18000])
     days=["ПОНЕДЕЛЬНИК","ВТОРНИК","СРЕДА","ЧЕТВЕРГ","ПЯТНИЦА"]
     dates="; ".join(f"{d} — {(dt+timedelta(days=i)).strftime('%d.%m.%Y')}" for i,d in enumerate(days))
-    prompt=f"Составь черновик КТП на пять дней. Возраст: {age}. Тема: {theme}. Даты: {dates}. Разделы каждого дня: УТРО, ДЕНЬ, ВЕЧЕР. Используй только данные источников. Сохраняй разделы шаблона. Недостающие данные отмечай [НУЖНО ДОПОЛНИТЬ].\\n\\n" + "\\n\\n".join(docs)
+    prompt=f"Составь черновик КТП на пять дней. Возраст: {age}. Тема: {theme}. Даты: {dates}. Разделы каждого дня: УТРО, ДЕНЬ, ВЕЧЕР. Используй только данные источников. Сохраняй разделы шаблона. Недостающие данные отмечай [НУЖНО ДОПОЛНИТЬ].\n\n" + "\n\n".join(docs)
     text=generate_text(prompt)
     doc=Document()
     sec=doc.sections[0]; sec.top_margin=Inches(.55); sec.bottom_margin=Inches(.55)
     doc.styles["Normal"].font.name="Arial"; doc.styles["Normal"].font.size=Pt(9)
     p=doc.add_heading("КАЛЕНДАРНО-ТЕМАТИЧЕСКИЙ ПЛАН",0); p.alignment=1
-    p=doc.add_paragraph(f"{age} • {theme}\\n{dates}"); p.alignment=1
+    p=doc.add_paragraph(f"{age} • {theme}\n{dates}"); p.alignment=1
     doc.add_paragraph("Рабочий черновик. Проверьте соответствие локальной программе и требованиям ДОУ.")
     for line in text.splitlines():
         line=line.strip()
