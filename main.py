@@ -75,7 +75,7 @@ async def make_plan(age: str=Form(...), theme: str=Form(...), start_date: str=Fo
         docs.append(label + ":\n" + content[:18000])
     days=["ПОНЕДЕЛЬНИК","ВТОРНИК","СРЕДА","ЧЕТВЕРГ","ПЯТНИЦА"]
     dates="; ".join(f"{d} — {(dt+timedelta(days=i)).strftime('%d.%m.%Y')}" for i,d in enumerate(days))
-    prompt=f"Составь черновик КТП на пять дней. Возраст: {age}. Тема: {theme}. Даты: {dates}. Разделы каждого дня: УТРО, ДЕНЬ, ВЕЧЕР. Используй только данные источников. Сохраняй разделы шаблона. Недостающие данные отмечай [НУЖНО ДОПОЛНИТЬ].\n\n" + "\n\n".join(docs)
+    prompt=f"Составь календарно-тематический план на пять дней. Возраст: {age}. Тема: {theme}. Даты: {dates}. Разделы каждого дня: УТРО, ДЕНЬ, ВЕЧЕР. Используй только данные источников. Сохраняй разделы шаблона. Недостающие данные отмечай [НУЖНО ДОПОЛНИТЬ].\n\n" + "\n\n".join(docs)
     text=generate_text(prompt)
     doc=Document()
     sec=doc.sections[0]; sec.top_margin=Inches(.55); sec.bottom_margin=Inches(.55)
