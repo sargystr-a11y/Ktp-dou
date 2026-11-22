@@ -5,7 +5,7 @@
 <meta name="description" content="Персональный конструктор КТП по документам вашего детского сада. Получите план на неделю в Word.">
 <title>Планер ДОУ — планирование для воспитателей</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#302b29;--muted:#706965;--rose:#e6d8d3;--pink:#f5efeb;--sage:#eceee7;--sage-dark:#858b7c;--paper:#fffdfa;--line:#e8e1dc;--accent:#9d7b58;--gold:#a58b5f;--gold-light:#d2bd91}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 'DM Sans',Arial,sans-serif}
@@ -16,20 +16,117 @@ a{color:inherit}.site-header{border-bottom:1px solid var(--line);background:#fff
 .seal{position:absolute;z-index:3;right:22px;bottom:18px;width:116px;height:116px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f8f4e9eF;box-shadow:0 5px 18px #59482b18;color:#8c754e;text-align:center;transform:rotate(7deg)}.seal:before{content:"";position:absolute;inset:6px;border:1px solid #b9a57c;border-radius:50%}.seal:after{content:"✧";position:absolute;top:12px;font-size:16px;color:#9b8457}.seal-inner{font:600 10px/1.45 'DM Sans',Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}.seal-inner b{display:block;font:500 23px 'Playfair Display',Georgia,serif;letter-spacing:0;margin:3px 0;color:#816b46}.section{padding:72px 0;border-top:1px solid var(--line)}.section-head{text-align:center;max-width:680px;margin:0 auto 38px}.section h2{font:600 clamp(31px,4vw,43px)/1.2 'Playfair Display',Georgia,serif;letter-spacing:-.025em;text-shadow:0 1px 0 #fff,0 2px 7px #493a320c;margin:12px 0;color:#3f3633}.section-head p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);padding:27px 25px;min-height:190px}.card .num{font:italic 30px 'Playfair Display',serif;color:#c49a94}.card h3{font:500 21px 'Playfair Display',serif;margin:10px 0}.card p{font-size:14px;color:var(--muted);margin:0}.soft{background:#f6f2ee}.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.how{padding:22px 17px;background:#fff;border:1px solid var(--line)}.how b{display:block;font:500 19px 'Playfair Display',serif;margin:10px 0 5px}.how span{font-size:12px;color:#b58a84;letter-spacing:.12em}.sample{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.sample-paper{background:#fff;padding:30px;box-shadow:0 12px 35px #5a44320d;border:1px solid #eee7e1;transform:rotate(1deg)}.sample-paper h3{text-align:center;font:20px 'Playfair Display',serif}.sample-row{display:grid;grid-template-columns:90px 1fr;border-top:1px solid #eee7e1;padding:10px 0;font-size:12px}.sample-row b{color:#8e7770}.sample-copy p{color:var(--muted)}.feature-band{background:#eff0e9;padding:55px 35px;text-align:center}.feature-band h2{margin-top:0}.lesson-grid .card{background:#fffdfa}.lesson-link{display:inline-block;margin-top:17px;color:#9f7772;font-size:13px;text-decoration:none;border-bottom:1px solid #d8c1bc}.reviews{background:#f6f1ee}.review-note{max-width:720px;margin:auto;text-align:center;padding:25px;border:1px dashed #d8c2bc;color:#776d68;background:#fffaf8}.review-note strong{display:block;font:22px 'Playfair Display',serif;color:#6c5551;margin-bottom:7px}.access{display:flex;justify-content:space-between;gap:30px;align-items:center;background:#f1f1e9;padding:36px 42px}.access h2{margin:0 0 8px}.access p{margin:0;color:var(--muted)}.faq{max-width:800px;margin:auto}.faq details{border-bottom:1px solid var(--line);padding:17px 2px}.faq summary{cursor:pointer;font-weight:600}.faq p{color:var(--muted);margin-bottom:0}.footer{padding:35px 0 45px;color:#938983;font-size:12px;border-top:1px solid var(--line)}.footer-inner{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
 @media(max-width:760px){.nav{padding:13px 18px}.nav-links{gap:12px}.nav-links a:not(.nav-cta){display:none}.wrap{padding:0 19px}.hero{grid-template-columns:1fr;padding:48px 0 55px;gap:30px}.hero-art{min-height:340px}.planner{padding:18px}.day{min-height:112px}.cards,.how-grid{grid-template-columns:1fr 1fr}.sample{grid-template-columns:1fr;gap:25px}.access{display:block;padding:28px 23px}.access .button{margin-top:20px}.section{padding:55px 0}}
 @media(max-width:480px){.cards,.how-grid{grid-template-columns:1fr}.hero h1{font-size:43px}.hero-art{min-height:300px}.week{gap:3px}.day{min-height:100px;padding:6px 3px}.day b{font-size:8px}.planner h3{font-size:22px}.section-head{text-align:left}.footer-inner{display:block}}
+
+/* Editorial Pinterest-inspired art direction */
+:root{--ink:#292c25;--muted:#77786e;--rose:#e8dfd4;--pink:#f4f0e9;--sage:#e8e9df;--sage-dark:#777d68;--paper:#f8f6f0;--line:#dedbd0;--accent:#777d68;--gold:#a38b60;--gold-light:#d4c39d}
+body{background:#f8f6f0;color:var(--ink);font-family:'Manrope',sans-serif;letter-spacing:-.012em}
+.site-header{background:#f8f6f0ed;border-bottom:1px solid #dedbd0}
+.nav{max-width:1240px;padding-top:18px;padding-bottom:18px}
+.brand{font-family:'Cormorant Garamond',serif;font-size:31px;font-weight:600;letter-spacing:-.04em;color:#303329;text-shadow:none}
+.brand span{color:#9b8358}
+.nav-links a{font-size:10px;letter-spacing:.16em;color:#686c60}
+.nav-cta{border:1px solid #a38b60!important;color:#575a4c!important;padding:11px 18px}
+.nav-cta:hover{background:#eeece3}
+.wrap{max-width:1240px}
+.hero{padding:78px 0 94px;min-height:690px;grid-template-columns:.92fr 1.08fr;gap:7%;align-items:center}
+.eyebrow{font-size:10px;letter-spacing:.22em;color:#8a8068}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(54px,6.2vw,82px);line-height:.98;letter-spacing:-.045em;font-weight:500;color:#303329;text-shadow:none;margin:23px 0 25px}
+.hero h1 em{color:#8c927c;font-style:italic}
+.lead{font-size:15px;line-height:1.95;color:#6f7168;max-width:470px}
+.button{background:#656d59;border:1px solid #656d59;color:#fffdf7;padding:16px 25px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 8px 20px #434a3718}
+.button:hover{background:#4f5846;border-color:#4f5846;transform:translateY(-2px)}
+.text-link{font-size:12px;color:#777b6b;border-color:#b9b9a9}
+.micro{font-size:11px;color:#89897d;letter-spacing:.015em}
+.hero-art{min-height:510px;background:linear-gradient(135deg,#e9e8dc 0%,#dedfd1 48%,#e9e2d7 100%);padding:38px;isolation:isolate}
+.hero-art:before{width:420px;height:420px;top:-190px;right:-110px;background:radial-gradient(circle,#f4f0e5 0%,#e7e3d6 68%,transparent 69%);z-index:-1}
+.hero-art:after{width:340px;height:340px;bottom:-190px;left:-120px;background:radial-gradient(circle,#cdd2c1 0%,#d9ddcf 68%,transparent 69%);z-index:-1}
+.art-note{top:34px;left:38px;color:#7d806f;font-size:9px;letter-spacing:.24em}
+.planner{width:min(83%,500px);padding:31px 34px 37px;background:#fbfaf5;box-shadow:0 30px 65px #4c4c3b25;transform:rotate(-2.2deg);border:1px solid #e3dfd2}
+.planner-top{font-family:'Manrope',sans-serif;font-size:9px;letter-spacing:.15em;color:#858575;border-color:#e5e1d5}
+.planner h3{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:500;color:#414638;margin:21px 0 2px}
+.planner-sub{font-family:'Cormorant Garamond',serif;font-size:16px;color:#8a907b}
+.week{gap:8px;margin-top:28px}
+.day{background:#fffefa;border:1px solid #e9e6db;min-height:142px;padding:10px 6px}
+.day b{font-size:9px;color:#777d6b;border-color:#e8e5d9;letter-spacing:.12em}
+.scribble{height:5px;background:#d9d9c9;border-radius:0;margin:14px 2px}
+.scribble:nth-child(3){background:#c7cebb}
+.scribble:nth-child(4){background:#e5d8c9}
+.seal{right:23px;bottom:20px;background:#f4f0e4f2;border-color:#a38b60;color:#8a754e;box-shadow:0 8px 24px #51442a22}
+.seal:before{border-color:#b9a77f}.seal:after{color:#a38b60}
+.section{padding:92px 0;border-color:#dedbd0}
+.section-head{margin-bottom:48px}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(39px,4.4vw,54px);font-weight:500;line-height:1.04;color:#34382e;text-shadow:none;letter-spacing:-.025em}
+.section-head p{font-size:14px;line-height:1.9;color:#77786e}
+.soft{background:#eeeee6}
+.cards{gap:0;border-top:1px solid #d8d9cd;border-bottom:1px solid #d8d9cd}
+.card{background:transparent;border:0;border-right:1px solid #d8d9cd;padding:30px 30px 34px;min-height:205px}
+.card:last-child{border-right:0}
+.card .num{font-family:'Cormorant Garamond',serif;font-size:35px;color:#9b8b68}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:500;color:#3e4337}
+.card p{font-size:13px;line-height:1.85;color:#77786e}
+.how-grid{gap:1px;background:#d9dacf;border:1px solid #d9dacf}
+.how{background:#f8f6f0;padding:27px 21px}
+.how span{font-size:9px;color:#8b896f;letter-spacing:.2em}
+.how b{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:500;color:#414638}
+.how p{font-size:12px;color:#77786e;line-height:1.8}
+.sample{gap:8%;grid-template-columns:1.05fr .95fr}
+.sample-paper{background:#fbfaf5;border:1px solid #e5e1d5;box-shadow:0 24px 55px #4c4c3b12;padding:38px}
+.sample-paper h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;color:#404638}
+.sample-row{font-size:11px;border-color:#e5e1d5;padding:13px 0}
+.sample-row b{color:#858a75}
+.sample-copy h2{max-width:470px}
+.feature-band{background:#e5e8dc;padding:72px 50px;border:1px solid #d9ddce}
+.feature-band h2{font-size:clamp(39px,4.4vw,54px)}
+.lesson-grid .card{background:transparent}
+.lesson-link{color:#747d65;border-color:#b8beaa;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.reviews{background:#f0ebe3}
+.review-note{border:1px solid #d9d1c2;background:#f8f5ee;color:#747267;font-size:13px;padding:34px}
+.review-note strong{font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:500;color:#414638}
+.access{background:#e5e8dc;padding:45px 50px;border:1px solid #d7dccd}
+.access h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500}
+.faq details{border-color:#dedbd0;padding:20px 2px}
+.faq summary{font-size:13px;color:#45493d}
+.faq p{font-size:13px;line-height:1.8}
+.footer{border-color:#dedbd0;background:#f3f0e8}
+.footer .brand{font-size:29px}
+@media(max-width:760px){
+ .hero{padding:55px 0 65px;min-height:auto;gap:34px}
+ .hero-art{min-height:380px;padding:22px}
+ .planner{width:88%;padding:20px 18px 25px}
+ .planner h3{font-size:30px}
+ .day{min-height:112px}
+ .section{padding:65px 0}
+ .card{border-right:0;border-bottom:1px solid #d8d9cd;padding:24px 20px}
+ .card:last-child{border-bottom:0}
+ .how-grid{gap:1px}
+ .sample-paper{padding:25px}
+ .access{padding:30px 25px}
+}
+@media(max-width:480px){
+ .hero h1{font-size:51px}
+ .hero-art{min-height:310px}
+ .planner{width:91%;padding:15px 12px 20px}
+ .planner h3{font-size:25px}
+ .week{gap:3px}
+ .day{min-height:95px;padding:6px 3px}
+ .section-head{text-align:left}
+ .feature-band{padding:40px 24px}
+ .access h2{font-size:34px}
+}
 </style>
 </head>
 <body>
 <header class="site-header"><nav class="nav"><a class="brand" href="/">Планер <span>ДОУ</span></a><div class="nav-links"><a href="#how">Как работает</a><a href="#sample">Пример КТП</a><a href="#learn">Обучение</a><a href="#reviews">Отзывы</a><a class="nav-cta" href="/app">Личный кабинет</a></div></nav></header>
 <main>
-<div class="wrap"><section class="hero"><div><div class="eyebrow">Персональный конструктор КТП · для воспитателей ДОУ</div><h1>Верните себе время. <em>Бумаги подождут.</em></h1><p class="lead">Планер ДОУ помогает собрать календарно-тематический план по документам вашего детского сада. Загрузите привычные материалы — и получите файл Word, который останется проверить и утвердить.</p><div class="actions"><a class="button" href="/app">Освободить время для детей <span aria-hidden="true"></span></a><a class="text-link" href="#how">Посмотреть, как это работает</a></div><p class="micro">Ваш шаблон. Ваши материалы. Меньше часов за заполнением документации.</p></div>
+<div class="wrap"><section class="hero"><div><div class="eyebrow">Персональный конструктор КТП · для воспитателей ДОУ</div><h1>Верните себе время. <em>Бумаги подождут.</em></h1><p class="lead">Планер ДОУ помогает собрать календарно-тематический план по документам вашего детского сада. Загрузите привычные материалы — и получите файл Word, который останется проверить и утвердить.</p><div class="actions"><a class="button" href="/app">Создать КТП за минуты</a><a class="text-link" href="#how">Посмотреть, как это работает</a></div><p class="micro">Ваш шаблон. Ваши материалы. Меньше часов за заполнением документации.</p></div>
 <div class="hero-art"><div class="art-note">ПЛАНИРОВАНИЕ БЕЗ ЛИШНЕЙ РУТИНЫ</div><div class="planner"><div class="planner-top"><span>WEEKLY PLANNER</span><span>YOUR KINDER GARTEN</span></div><h3>План недели</h3><div class="planner-sub">бережно собран по вашим документам</div><div class="week"><div class="day"><b>ПН</b><div class="scribble"></div><div class="scribble"></div><div class="scribble"></div></div><div class="day"><b>ВТ</b><div class="scribble"></div><div class="scribble"></div><div class="scribble"></div></div><div class="day"><b>СР</b><div class="scribble"></div><div class="scribble"></div><div class="scribble"></div></div><div class="day"><b>ЧТ</b><div class="scribble"></div><div class="scribble"></div><div class="scribble"></div></div><div class="day"><b>ПТ</b><div class="scribble"></div><div class="scribble"></div><div class="scribble"></div></div></div></div><div class="seal" aria-label="Фирменная печать Планер ДОУ"><div class="seal-inner">для тех,<br>кто заботится<b>ПД</b>ПЛАНЕР ДОУ</div></div></section></div>
 <section class="section soft" id="why"><div class="wrap"><div class="section-head"><div class="eyebrow">Ваше время — ценно</div><h2>Меньше рутины. Больше внимания детям.</h2><p>Сервис помогает собрать планирование из уже имеющихся материалов, чтобы не переносить всё вручную из файла в файл.</p></div><div class="cards"><article class="card"><div class="num">01</div><h3>Не начинать с пустого листа</h3><p>Используйте привычный шаблон и структуру вашего детского сада.</p></article><article class="card"><div class="num">02</div><h3>Не искать материалы по папкам</h3><p>Загрузите перспективный план и картотеку игр в одном месте.</p></article><article class="card"><div class="num">03</div><h3>Получить документ Word</h3><p>Откройте результат, проверьте содержание и внесите нужные изменения.</p></article></div></div></section>
-<section class="section" id="how"><div class="wrap"><div class="section-head"><div class="eyebrow">Всего несколько шагов</div><h2>Как работает конструктор</h2><p>Один раз подготовьте материалы своего ДОУ — и используйте их для планирования.</p></div><div class="how-grid"><div class="how"><span>ШАГ 01</span><b>Шаблон ДОУ</b><p>Загрузите файл, в котором обычно заполняете КТП.</p></div><div class="how"><span>ШАГ 02</span><b>Перспективный план</b><p>Добавьте тематическое содержание и задачи.</p></div><div class="how"><span>ШАГ 03</span><b>Картотека игр</b><p>Загрузите свои игры и материалы.</p></div><div class="how"><span>ШАГ 04</span><b>Ваш КТП в Word</b><p>Укажите группу, тему и дату начала недели.</p></div></div><div style="text-align:center;margin-top:30px"><a class="button" href="/app">Перейти к созданию КТП　</a></div></div></section>
+<section class="section" id="how"><div class="wrap"><div class="section-head"><div class="eyebrow">Всего несколько шагов</div><h2>Как работает конструктор</h2><p>Один раз подготовьте материалы своего ДОУ — и используйте их для планирования.</p></div><div class="how-grid"><div class="how"><span>ШАГ 01</span><b>Шаблон ДОУ</b><p>Загрузите файл, в котором обычно заполняете КТП.</p></div><div class="how"><span>ШАГ 02</span><b>Перспективный план</b><p>Добавьте тематическое содержание и задачи.</p></div><div class="how"><span>ШАГ 03</span><b>Картотека игр</b><p>Загрузите свои игры и материалы.</p></div><div class="how"><span>ШАГ 04</span><b>Ваш КТП в Word</b><p>Укажите группу, тему и дату начала недели.</p></div></div><div style="text-align:center;margin-top:30px"><a class="button" href="/app">Создать КТП за минуты</a></div></div></section>
 <section class="section soft" id="sample"><div class="wrap sample"><div class="sample-paper"><div class="eyebrow" style="text-align:center">Пример структуры документа</div><h3>Календарно-тематический план</h3><p style="text-align:center;font-size:11px;color:#9a8b84">Возрастная группа · Тема недели · Даты</p><div class="sample-row"><b>ПОНЕДЕЛЬНИК</b><span>Утро · День · Вечер</span></div><div class="sample-row"><b>ВТОРНИК</b><span>Утро · День · Вечер</span></div><div class="sample-row"><b>СРЕДА</b><span>Утро · День · Вечер</span></div><div class="sample-row"><b>ЧЕТВЕРГ</b><span>Утро · День · Вечер</span></div><div class="sample-row"><b>ПЯТНИЦА</b><span>Утро · День · Вечер</span></div></div><div class="sample-copy"><div class="eyebrow">Результат работы</div><h2>Не просто текст, а документ для дальнейшей работы</h2><p>Сервис формирует файл Word на пять рабочих дней. В нём можно проверить формулировки, дополнить содержание и адаптировать план под особенности вашей группы.</p><p class="micro">Визуальный пример показывает структуру. Содержание готового КТП формируется по загруженным вами материалам.</p></div></div></section>
 <section class="section" id="features"><div class="wrap"><div class="feature-band"><div class="eyebrow">Ваши материалы — основа результата</div><h2>Персональный подход вместо случайных шаблонов</h2><p style="max-width:690px;margin:0 auto;color:#6f7167">Конструктор ориентируется на документы конкретного ДОУ: шаблон, перспективный план и картотеку игр. Он не подменяет методиста и не отменяет профессиональную проверку.</p></div></div></section>
 <section class="section soft" id="learn"><div class="wrap"><div class="section-head"><div class="eyebrow">Небольшая помощь на каждом этапе</div><h2>Обучение и полезные инструкции</h2><p>Три коротких урока, чтобы подготовить материалы и уверенно работать с результатом.</p></div><div class="cards lesson-grid"><article class="card"><div class="num">УРОК 01</div><h3>Как правильно составить КТП</h3><p>Разберём структуру, содержание и связь планирования с образовательной программой ДОУ.</p><a class="lesson-link" href="#lesson-1">Читать урок</a></article><article class="card"><div class="num">УРОК 02</div><h3>Как подготовить документы для загрузки</h3><p>Какие файлы понадобятся, какие форматы подходят и как подготовить материалы.</p><a class="lesson-link" href="#lesson-2">Читать урок</a></article><article class="card"><div class="num">УРОК 03</div><h3>Как проверить и отредактировать готовый план</h3><p>На что обратить внимание в Word и как внести свои уточнения.</p><a class="lesson-link" href="#lesson-3">Читать урок</a></article></div><div style="margin-top:22px" class="cards"><article class="card" id="lesson-1"><h3>01. Составление КТП</h3><p>Начните с рабочей программы и перспективного планирования вашего ДОУ. Проверьте соответствие возрастной группе, теме недели, задачам и режимным моментам. Сверьте содержание каждого дня с принятой в детском саду структурой.</p></article><article class="card" id="lesson-2"><h3>02. Подготовка документов</h3><p>Подготовьте шаблон КТП, перспективный план и картотеку игр. Поддерживаются DOCX, PDF с текстовым слоем, TXT и XLSX. Проверьте, что файлы читаются и в них нет персональных данных детей.</p></article><article class="card" id="lesson-3"><h3>03. Проверка результата</h3><p>Откройте файл Word и проверьте даты, возрастную группу, тему, последовательность мероприятий и соответствие материалам ДОУ. Исправьте неточности и дополните то, что требует решения воспитателя или методиста.</p></article></div></div></section>
 <section class="section reviews" id="reviews"><div class="wrap"><div class="section-head"><div class="eyebrow">Честно и по-настоящему</div><h2>Отзывы воспитателей</h2><p>Нам важно показывать реальный опыт специалистов, а не придумывать истории.</p></div><div class="review-note"><strong>Собираем первые отзывы</strong>Сервис готовится к тестированию. После первых пробных запусков здесь появятся настоящие отзывы воспитателей и примеры их обратной связи.<div style="margin-top:18px"><a class="text-link" href="/app">Попробовать конструктор</a></div></div></div></section>
-<section class="section" id="access"><div class="wrap"><div class="access"><div><div class="eyebrow">Доступ к конструктору</div><h2>Начните с подготовки своего КТП</h2><p>Сейчас мы проверяем удобство сервиса и качество результата. Информация о тарифах появится после тестирования.</p></div><a class="button" href="/app">Открыть кабинет</a></div></div></section>
+<section class="section" id="access"><div class="wrap"><div class="access"><div><div class="eyebrow">Доступ к конструктору</div><h2>Начните с подготовки своего КТП</h2><p>Сейчас мы проверяем удобство сервиса и качество результата. Информация о тарифах появится после тестирования.</p></div><a class="button" href="/app">Создать КТП за минуты</a></div></div></section>
 <section class="section soft" id="faq"><div class="wrap"><div class="section-head"><div class="eyebrow">Если остались вопросы</div><h2>Часто спрашивают</h2></div><div class="faq"><details><summary>Какие документы нужны для работы?</summary><p>Шаблон КТП вашего ДОУ, перспективный план и картотека игр.</p></details><details><summary>В каком формате я получу результат?</summary><p>Сервис формирует документ Word (.docx), который можно открыть и отредактировать.</p></details><details><summary>Можно загрузить скан PDF?</summary><p>Пока поддерживаются PDF с текстовым слоем. Сканированные PDF без распознаваемого текста не поддерживаются.</p></details><details><summary>Нужно ли проверять готовый план?</summary><p>Да. Проверьте соответствие рабочей программе, требованиям вашего ДОУ и особенностям группы.</p></details></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-inner"><div><a class="brand" href="/">Планер <span>ДОУ</span></a><p>Персональный конструктор календарно-тематического планирования.</p></div><div>Не загружайте персональные данные детей и конфиденциальные документы.<br>Результат необходимо проверить перед использованием.</div></div></footer>
