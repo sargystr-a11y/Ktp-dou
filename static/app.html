@@ -29,6 +29,30 @@ input:focus,select:focus{outline:2px solid #d7d9c9;border-color:#879078}
 .foot{font-size:11px;color:#898a7d}
 @media(max-width:500px){.wrap{padding:25px 16px 50px}.panel{padding:22px 17px}}
 
+
+/* Match the blush Pinterest reference used on the homepage */
+:root{--ink:#37302f;--muted:#817775;--rose:#e8d0ce;--paper:#fffdfc;--line:#eee5e2;--accent:#b58c8b}
+body{background:#faf5f3;color:#37302f;font-family:'Manrope',sans-serif}
+.wrap{max-width:820px}
+.brand{font:500 32px 'Cormorant Garamond',serif;color:#3b3331;text-shadow:none}
+.brand span{color:#b58c8b}
+.back{color:#a77f7d}
+.eyebrow{color:#a38c7b;letter-spacing:.2em}
+h1{font:500 clamp(40px,6vw,58px)/1 'Cormorant Garamond',serif;color:#443a38;text-shadow:none}
+.intro{font-size:13px;line-height:1.9;color:#817775}
+.panel{background:#fffdfc;border:1px solid #eee5e2;box-shadow:0 18px 45px #614b460b;padding:clamp(22px,5vw,40px)}
+.step-title{font:500 27px 'Cormorant Garamond',serif;color:#a77f7d;border-color:#eee5e2}
+label{font-size:12px;color:#574b49}
+input,select{border:1px solid #e5d8d5;border-radius:0;background:#fff;padding:14px;font:13px 'Manrope',sans-serif;color:#37302f}
+input:focus,select:focus{outline:2px solid #f0dfdd;border-color:#c79d9b}
+.upload{background:#faf5f3;border:1px solid #eee5e2}
+.hint,.privacy{font-size:11px;color:#918582}
+.button{background:#e8d0ce;color:#fff;border:1px solid #e8d0ce;padding:15px 22px;font:600 10px 'Manrope',sans-serif;letter-spacing:.15em;text-transform:uppercase}
+.button:hover{background:#d5b4b2}
+.status{font-size:12px;color:#806e6b}
+.privacy{border-color:#eee5e2;line-height:1.8}
+.foot{color:#9a8e89}
+
 </style></head><body><main class="wrap"><a class="brand" href="/">Планер <span>ДОУ</span></a><br><a class="back" href="/">Вернуться на главную</a><div style="margin-top:35px"><div class="eyebrow">Ваше рабочее пространство</div><h1>Соберём план вашей недели</h1><p class="intro">Добавьте документы своего детского сада. Конструктор подготовит КТП на пять рабочих дней и сформирует файл Word, который вы сможете проверить и отредактировать.</p></div>
 <form class="panel" id="f"><div class="step-title">01 · Параметры недели</div><label>Возрастная группа</label><select name="age" required><option>Ранний возраст · 1,5–3 года</option><option>Младшая группа · 3–4 года</option><option>Средняя группа · 4–5 лет</option><option>Старшая группа · 5–6 лет</option><option>Подготовительная группа · 6–7 лет</option></select><label>Тема недели</label><input name="theme" maxlength="180" required placeholder="Например: Осень в нашем городе"><label>Понедельник — дата начала недели</label><input type="date" name="start_date" required>
 <div class="step-title">02 · Документы вашего ДОУ</div><label>Шаблон КТП</label><div class="upload"><input type="file" name="template" accept=".docx,.pdf,.txt,.xlsx" required><p class="hint">Файл, в котором вы обычно заполняете календарно-тематический план.</p></div><label>Перспективный план</label><div class="upload"><input type="file" name="perspective" accept=".docx,.pdf,.txt,.xlsx" required><p class="hint">Планирование и содержание по вашей образовательной программе.</p></div><label>Картотека игр</label><div class="upload"><input type="file" name="games" accept=".docx,.pdf,.txt,.xlsx" required><p class="hint">Игры и материалы, которые используете в работе.</p></div>
