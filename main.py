@@ -32,7 +32,7 @@ def extract(name, data):
 
 def generate_text(prompt):
     key = os.getenv("AI_API_KEY") or os.getenv("DEEPSEEK_API_KEY")
-    if not key: raise HTTPException(503, "ИИ не подключён: добавьте AI_API_KEY в переменные окружения хостинга.")
+    if not key: raise HTTPException(503, "Сервис временно недоступен. Попробуйте позже или сообщите администратору.")
     import requests
     base = os.getenv("AI_BASE_URL", "https://api.deepseek.com").rstrip("/")
     model = os.getenv("AI_MODEL", "deepseek-chat")
@@ -46,7 +46,7 @@ def generate_text(prompt):
         r.raise_for_status()
         return r.json()["choices"][0]["message"]["content"].strip()
     except Exception as e:
-        raise HTTPException(502, "Ошибка обращения к ИИ-модели. Проверьте настройки API: " + str(e)[:180])
+        raise HTTPException(502, "Не удалось подготовить документ. Проверьте настройки сервиса: " + str(e)[:180])
 
 @app.get("/", response_class=HTMLResponse)
 def home(): return (BASE / "index.html").read_text(encoding="utf-8")
